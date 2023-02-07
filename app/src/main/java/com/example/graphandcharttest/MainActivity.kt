@@ -1,7 +1,9 @@
 package com.example.graphandcharttest
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
@@ -46,6 +48,14 @@ class MainActivity : AppCompatActivity() {
         chart.data = lineData
 
         chart.invalidate() // This refreshes the chart view, updating the data
+
+
+        //This is just for the button
+        val button = findViewById<Button>(R.id.button)
+        button.setOnClickListener {
+            val intent = Intent(this, BarGraphActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
